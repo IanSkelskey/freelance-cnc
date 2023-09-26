@@ -6,11 +6,11 @@ function App() {
   const [animate, setAnimate] = useState(true);
 
   return (
-    <div className="flex flex-col items-center bg-primary text-text">
+    <div className="flex flex-col items-center bg-primary text-text h-screen">
       <header className="w-full">
         <h1 className="text-center text-3xl text-accent1 p-4">Freelance CNC</h1>
       </header>
-      <main className="w-full flex bg-secondary">
+      <main className="w-full flex bg-secondary flex-grow">
         <div className="w-1/2 p-4">
           {/* Code or specs go here */}
           <pre className="font-mono text-accent2">
