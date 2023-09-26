@@ -18,6 +18,8 @@ function App() {
               Material: Aluminum
               Dimensions: 10x10x5 cm
               Tolerance: ±0.01 mm
+              Weight: 10 kg
+              Price: $1000
             `}
           </pre>
         </div>
