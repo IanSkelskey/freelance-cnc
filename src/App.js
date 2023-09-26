@@ -1,6 +1,6 @@
 // App.js
 import React, { useState } from 'react';
-import CubeCanvas from './three/Cube';
+import CubeCanvas from './three/Model';
 
 function App() {
   const [animate, setAnimate] = useState(true);

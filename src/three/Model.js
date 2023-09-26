@@ -1,5 +1,5 @@
-import React, { useRef, useEffect } from 'react';
-import { Canvas, useLoader, useFrame, useThree } from '@react-three/fiber';
+import React, { useRef } from 'react';
+import { Canvas, useLoader, useFrame } from '@react-three/fiber';
 import { OBJLoader } from 'three/examples/jsm/loaders/OBJLoader';
 import { OrbitControls } from '@react-three/drei';
 import { Mesh, MeshStandardMaterial } from 'three';
@@ -31,7 +31,7 @@ const Model = ({ animate }) => {
   return <primitive object={obj} ref={meshRef} />;
 };
 
-export default function CubeCanvas({ animate }) {
+export default function ModelCanvas({ animate }) {
   return (
     <Canvas>
       <ambientLight intensity={0.5}  />
