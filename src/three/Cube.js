@@ -1,13 +1,15 @@
 // Cube.js
-import React, { useRef, useState } from 'react';
+import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
 
-const Cube = () => {
+const Cube = ({ animate }) => {
   const meshRef = useRef();
 
   useFrame(() => {
-    meshRef.current.rotation.x += 0.01;
-    meshRef.current.rotation.y += 0.01;
+    if (animate) {
+      meshRef.current.rotation.x += 0.01;
+      meshRef.current.rotation.y += 0.01;
+    }
   });
 
   return (
@@ -18,12 +20,12 @@ const Cube = () => {
   );
 };
 
-export default function CubeCanvas() {
+export default function CubeCanvas({ animate }) {
   return (
     <Canvas>
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
-      <Cube />
+      <Cube animate={animate} />
     </Canvas>
   );
 }

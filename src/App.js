@@ -1,8 +1,10 @@
 // App.js
-import React from 'react';
+import React, { useState } from 'react';
 import CubeCanvas from './three/Cube';
 
 function App() {
+  const [animate, setAnimate] = useState(true);
+
   return (
     <div className="flex flex-col items-center bg-primary text-text">
       <header className="w-full">
@@ -19,9 +21,16 @@ function App() {
             `}
           </pre>
         </div>
-        <div className="w-1/2 p-4">
+        <div className="w-1/2 p-4 text-center">
           {/* 3D model goes here */}
-          <CubeCanvas />
+          <div>
+            <CubeCanvas animate={animate} />
+          </div>
+          <div>
+            <button className='bg-accent1 p-2 rounded-sm text-white' onClick={() => setAnimate(!animate)}>
+              {animate ? 'Stop Animation' : 'Start Animation'}
+            </button>
+          </div>
         </div>
       </main>
       <footer className="w-full text-primary text-center p-4 bg-accent2">
