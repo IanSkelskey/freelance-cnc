@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="flex flex-col items-center bg-primary text-text">
       <header className="w-full">
-        <h1 className="text-center text-3xl text-accent1 p-4">Cody Sidlik</h1>
+        <h1 className="text-center text-3xl text-accent1 p-4">Freelance CNC</h1>
       </header>
       <main className="w-full flex bg-secondary">
         <div className="w-1/2 p-4">
