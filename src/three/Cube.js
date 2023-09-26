@@ -12,8 +12,8 @@ const Cube = () => {
 
   return (
     <mesh ref={meshRef}>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={'blue'} />
+      <boxGeometry args={[3, 3, 3]} />
+      <meshStandardMaterial color={'#58A6FF'} wireframe />
     </mesh>
   );
 };

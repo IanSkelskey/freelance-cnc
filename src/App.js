@@ -6,7 +6,7 @@ function App() {
   return (
     <div className="flex flex-col items-center bg-primary text-text">
       <header className="w-full">
-        <h1 className="text-center text-3xl text-accent1">Cody Sidlik</h1>
+        <h1 className="text-center text-3xl text-accent1 p-4">Cody Sidlik</h1>
       </header>
       <main className="w-full flex bg-secondary">
         <div className="w-1/2 p-4">
@@ -24,7 +24,7 @@ function App() {
           <CubeCanvas />
         </div>
       </main>
-      <footer className="w-full text-center p-4 bg-accent2">
+      <footer className="w-full text-primary text-center p-4 bg-accent2">
         {/* Hiring and pricing info go here */}
         <p>Contact us for hiring and pricing details.</p>
       </footer>
