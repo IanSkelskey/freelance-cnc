@@ -6,8 +6,8 @@ import { Mesh, MeshStandardMaterial } from 'three';
 
 const modelDirectory = process.env.PUBLIC_URL + '/assets/models/';
 
-const Model = ({ filename, animate }) => {
-  const obj = useLoader(OBJLoader, process.env.PUBLIC_URL + modelDirectory + filename);
+const InnerModel = ({ filename, animate }) => {
+  const obj = useLoader(OBJLoader, modelDirectory + filename);
   const meshRef = useRef();
 
   useFrame(() => {
@@ -22,9 +22,9 @@ const Model = ({ filename, animate }) => {
   obj.traverse((child) => {
     if (child instanceof Mesh) {
       child.material = new MeshStandardMaterial({
-        color: '#ffffff',  // Stainless steel color
-        metalness: 0.8,    // High metalness for a metallic look
-        roughness: 0.2,    // Low roughness for a shiny surface
+        color: '#ffffff',
+        metalness: 0.8,
+        roughness: 0.2,
       });
       child.scale.set(0.02, 0.02, 0.02);
     }
@@ -33,15 +33,16 @@ const Model = ({ filename, animate }) => {
   return <primitive object={obj} ref={meshRef} />;
 };
 
-export default function ModelCanvas({ filename, animate }) {
+const ModelViewer = ({ filename, animate }) => {
   return (
     <Canvas>
-      <ambientLight intensity={0.5}  />
+      <ambientLight intensity={0.5} />
       <directionalLight position={[0, 10, 0]} intensity={1} color={'#FFFFFF'} castShadow />
       <spotLight position={[10, 15, 10]} angle={0.3} />
-      <Model filename={filename} animate={animate} />
+      <InnerModel filename={filename} animate={animate} />
       <OrbitControls />
     </Canvas>
   );
-}
+};
 
+export default ModelViewer;
