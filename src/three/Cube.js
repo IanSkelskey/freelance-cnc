@@ -1,17 +1,10 @@
 // Cube.js
-import React, { useRef } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
+import React from 'react';
+import ModelContainer from './ModelContainer';
 
 const Cube = () => {
-  const meshRef = useRef();
-
-  useFrame(() => {
-    meshRef.current.rotation.x += 0.01;
-    meshRef.current.rotation.y += 0.01;
-  });
-
   return (
-    <mesh ref={meshRef}>
+    <mesh>
       <boxGeometry args={[3, 3, 3]} />
       <meshStandardMaterial color={'#58A6FF'} wireframe />
     </mesh>
@@ -20,10 +13,8 @@ const Cube = () => {
 
 export default function CubeCanvas() {
   return (
-    <Canvas>
-      <ambientLight />
-      <pointLight position={[10, 10, 10]} />
+    <ModelContainer>
       <Cube />
-    </Canvas>
+    </ModelContainer>
   );
 }
