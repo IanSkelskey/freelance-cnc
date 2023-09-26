@@ -1,6 +1,7 @@
 // Cube.js
 import React, { useRef } from 'react';
 import { Canvas, useFrame } from '@react-three/fiber';
+import { OrbitControls } from '@react-three/drei';
 
 const Cube = ({ animate }) => {
   const meshRef = useRef();
@@ -26,6 +27,7 @@ export default function CubeCanvas({ animate }) {
       <ambientLight />
       <pointLight position={[10, 10, 10]} />
       <Cube animate={animate} />
+      <OrbitControls />
     </Canvas>
   );
 }
