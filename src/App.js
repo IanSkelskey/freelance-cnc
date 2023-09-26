@@ -1,6 +1,6 @@
 // App.js
 import React, { useState } from 'react';
-import CubeCanvas from './three/Model';
+import ModelCanvas from './three/Model';
 
 function App() {
   const [animate, setAnimate] = useState(true);
@@ -26,7 +26,7 @@ function App() {
         <div className="w-1/2 p-4 text-center">
           {/* 3D model goes here */}
           <div className='h-1/2'>
-            <CubeCanvas animate={animate} />
+            <ModelCanvas filename='test.obj' animate={animate} />
           </div>
           <div>
             <button className='bg-accent1 p-2 rounded-sm text-white' onClick={() => setAnimate(!animate)}>
