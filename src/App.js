@@ -23,7 +23,7 @@ function App() {
         </div>
         <div className="w-1/2 p-4 text-center">
           {/* 3D model goes here */}
-          <div>
+          <div className='h-1/2'>
             <CubeCanvas animate={animate} />
           </div>
           <div>
