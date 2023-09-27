@@ -7,7 +7,7 @@ function App() {
 
   function PlayPauseButton() {
     return (
-      <button className='absolute top-5 left-5 p-4 bg-accent1 rounded-md text-white' onClick={() => setAnimate(!animate)}>{(animate)?<PauseIcon color="#ffffff" />:<PlayIcon color="#ffffff" />}</button>
+      <button className='absolute top-5 left-5 p-4 bg-accent1 rounded-md text-white' onClick={() => setAnimate(!animate)}>{(animate) ? <PauseIcon color="#ffffff" /> : <PlayIcon color="#ffffff" />}</button>
     );
   }
 
@@ -26,18 +26,18 @@ function App() {
 export default App;
 
 // Flat play icon 
-function PlayIcon({color}) {
+function PlayIcon({ color }) {
   return (
-          <svg className='w-8 h-8' viewBox='0 0 24 24'>
-          <path fill={color} d='M8 5v14l11-7z' />
-          </svg>
-    );
+    <svg className='w-8 h-8' viewBox='0 0 24 24'>
+      <path fill={color} d='M8 5v14l11-7z' />
+    </svg>
+  );
 }
 
-function PauseIcon({color}) {
+function PauseIcon({ color }) {
   return (
-          <svg className='w-8 h-8' viewBox='0 0 24 24'>
-          <path fill={color} d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
-          </svg>
-    );
+    <svg className='w-8 h-8' viewBox='0 0 24 24'>
+      <path fill={color} d='M6 19h4V5H6v14zm8-14v14h4V5h-4z' />
+    </svg>
+  );
 }
