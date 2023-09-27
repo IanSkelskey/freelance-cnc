@@ -35,24 +35,32 @@ const InnerModel = ({ filename, animate }) => {
   return <primitive object={obj} ref={meshRef} />;
 };
 
-const SmallCube = ({ position }) => {
+const DebuggableLight = ({ type, position, intensity, color, debug = false }) => {
+  const lightProps = { position, intensity, color, castShadow: true };
+
   return (
-    <mesh position={[...position]} receiveShadow>
-      <boxGeometry args={[1, 1, 1]} />
-      <meshStandardMaterial color={'#0000FF'} />
-    </mesh>
+    <>
+      {type === 'directional' && <directionalLight {...lightProps} />}
+      {type === 'ambient' && <ambientLight {...lightProps} />}
+      {type === 'spot' && <spotLight {...lightProps} />}
+      {debug && (
+        <mesh position={position}>
+          <boxGeometry args={[1, 1, 1]} />
+          <meshStandardMaterial color={color} />
+        </mesh>
+      )}
+    </>
   );
 };
 
 const ModelViewer = ({ filename, animate }) => {
+
   return (
     <Canvas>
-      <ambientLight intensity={1.5} />
-      <directionalLight position={[10, 12, 0]} intensity={1} color={'#CCCCFF'} castShadow/>
-      <directionalLight position={[-10, -12, 0]} intensity={1} color={'#FFFFFF'} castShadow />
+      <DebuggableLight type="ambient" intensity={1.5} />
+      <DebuggableLight type="directional" position={[10, 12, 0]} intensity={1} color="#CCFFFF" debug />
+      <DebuggableLight type="directional" position={[-10, -12, 0]} intensity={1} color="#FFFFFF" debug />
       <InnerModel filename={filename} animate={animate} />
-      <SmallCube position={[10, 12, 0]} />
-      <SmallCube position={[-10, -12, 0]} />
       <OrbitControls />
     </Canvas>
   );
