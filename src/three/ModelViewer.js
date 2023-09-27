@@ -57,9 +57,9 @@ const ModelViewer = ({ filename, animate }) => {
 
   return (
     <Canvas>
-      <DebuggableLight type="ambient" intensity={1.5} />
-      <DebuggableLight type="directional" position={[10, 12, 0]} intensity={1} color="#CCFFFF" debug />
-      <DebuggableLight type="directional" position={[-10, -12, 0]} intensity={1} color="#FFFFFF" debug />
+      <DebuggableLight type="ambient" intensity={2} />
+      <DebuggableLight type="directional" position={[10, 12, 0]} intensity={.4} color="#CCFFFF" debug />
+      <DebuggableLight type="directional" position={[-10, -12, 0]} intensity={.4} color="#FFFFFF" debug />
       <InnerModel filename={filename} animate={animate} />
       <OrbitControls />
     </Canvas>
