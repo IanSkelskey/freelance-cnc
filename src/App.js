@@ -10,6 +10,7 @@ function App() {
       <button className='absolute top-5 left-5 p-4 bg-accent1 rounded-md text-white' onClick={() => setAnimate(!animate)}>{(animate) ? <PauseIcon color="#ffffff" /> : <PlayIcon color="#ffffff" />}</button>
     );
   }
+  
 
   return (
     <div className='w-full h-screen flex flex-col items-center justify-center bg-gradient-to-tr from-primary to-secondary'>
